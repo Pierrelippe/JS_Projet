@@ -133,12 +133,12 @@ function afficherMeteo(res, heureTemp, i, compt, lieu) {
 function nextSlide() {
 
   slideIndex++;
-  setSlide(slideIndex);
+  setSlide(Math.abs(slideIndex));
 }
 
 function prevSlide() {
   slideIndex--;
-  setSlide(slideIndex);
+  setSlide(Math.abs(slideIndex));
 
 }
 
