@@ -15,37 +15,99 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="images/Logo1.png" />
   </head>
-  <body>
+  <body class="bgColor">
     <div class="flex flex-col  items-center mt-5">
       <img src="images/Logo1.png" alt="" class="w-1/4 " />
       <h1
-        class="text-6xl font-semibold font-1 -mt-12 mb-8 border-b-4  border-gray-500 pb-2 px-8"
+        class="text-6xl font-semibold font-1 -mt-12 mb-8 border-b-4  border-gray-500 pb-2 px-8 txt-color"
       >
         Tempis
       </h1>
       <!-- Slider -->
-      <select id="list">
-        <option>Sélectionnez votre endroit</option>
-        <option>London</option>
+      <select id="list"  class="p-3 rounded border border-yellow-500 txt-color bgColor" >
+        <option >Sélectionner votre endroit</option>
+        <option >London</option>
         <option>Paris</option>
+        <option>Berlin</option>
+        <option>Rome</option>
+        <option>Clermont</option>
+        <option>Puy</option>
+        <option>Shangai</option >
       </select>
+      <!--Météo-->
 
-      <div class="flex flex-col items-center mt-10">
-        <p class="text-4xl lieu">Lieu</p>
+      <div class="flex flex-col items-center mt-10 mb-20 txt-color">
+        <p id="lieu" class="text-4xl border-b-4 border-yellow-400 pb-1 mb-6">
+          Lieu
+        </p>
         <div class="flex flex-row">
-          <div class="flex flex-col mt-3">
-            <p class="meteo">Météo</p>
+          <!--Col 1-->
+
+          <div class="flex flex-col items-center mt-3">
+            <!--1-->
+            <p id="date0" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
+            <p id="temp0" class="temp ">Météo</p>
+            <p id="meteo0" class="meteo ">Temps</p>
+            <img id="weather0" class="w-40" src="" />
+            <p id="heure0" class=" border-gray-300 border-b-2 pb-4">Heure</p>
+            <!--4-->
+
+            <p id="temp3" class="temp text-center mt-5">Météo</p>
+            <p id="meteo3" class="meteo text-center">Temps</p>
+            <img id="weather3" class="w-40" src="" />
+            <p id="heure3" class=" text-center">Heure</p>
           </div>
-          <div class="flex flex-col"></div>
+          <!--Col 2-->
+
+          <div class="flex flex-col mt-3 mx-4 items-center">
+            <!--2-->
+            <p id="date1" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
+            <p id="temp1" class="temp ">Météo</p>
+            <p id="meteo1" class="meteo ">Temps</p>
+            <img id="weather1" class="w-40" src="" />
+            <p id="heure1" class="border-gray-300 border-b-2 pb-4">Heure</p>
+
+            <!--5-->
+
+            <p id="temp4" class="temp  mt-5">Météo</p>
+            <p id="meteo4" class="meteo ">Temps</p>
+            <img id="weather4" class="w-40" src="" />
+            <p id="heure4" class=" ">Heure</p>
+          </div>
+
+          <!--Col 3-->
+
+          <div class="flex flex-col mt-3 items-center">
+            <!--3-->
+            <p id="date2" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
+            <p id="temp2" class="temp ">Météo</p>
+            <p id="meteo2" class="meteo ">Temps</p>
+            <img id="weather2" class="w-40" src="" />
+            <p id="heure2" class=" border-gray-300 border-b-2 pb-4">Heure</p>
+
+            <!--6-->
+
+            <p id="temp5" class="temp  mt-5">Météo</p>
+            <p id="meteo5" class="meteo ">Temps</p>
+            <img id="weather5" class="w-40" src="" />
+            <p id="heure5" class=" ">Heure</p>
+          </div>
         </div>
       </div>
     </div>
-<button id="button" class="mt-10 ml-10">Show test</button>
-    <div id="hide" class="">
-      <p class="test1 text-center text-2xl font-medium mt-32 ">TEST 1</p>
-      <p class="test2 text-center text-2xl font-medium ">TEST 2</p>
-      <p class="test3 text-center text-2xl font-medium ">TEST 3</p>
-    </div>
+  <!--  <div class="flex flex-col items-center mt-32 mb-12 ">
+      <button
+        id="button"
+        class="p-3 hover:text-white hover:bg-gray-500 border-2 mb-8"
+      >
+        Show test
+      </button>
+      <div id="hide" class="">
+        <p class="test1 text-center text-2xl font-medium mt-12 ">TEST 1</p>
+        <p class="test2 text-center text-2xl font-medium ">TEST 2</p>
+        <p class="test3 text-center text-2xl font-medium ">TEST 3</p>
+      </div>
+    </div>-->
 
     <script src="js/index.js"></script>
   </body>
