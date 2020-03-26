@@ -11,20 +11,20 @@
       href="https://fonts.googleapis.com/css?family=Bellota&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="images/Logo1.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/images/Logo1.png" />
   </head>
   <body class="bgColor">
     <div class="flex flex-col  items-center mt-5">
-      <img src="images/Logo1.png" alt="" class="w-1/4 " />
+      <img src="src/images/Logo1.png" alt="" class="w-1/4 " />
       <h1
         class="text-6xl font-semibold font-1 -mt-12 mb-8 border-b-4  border-gray-500 pb-2 px-8 txt-color"
       >
         Tempis
       </h1>
       <!-- Slider -->
-      <select id="list"  class="p-3 rounded border border-yellow-500 txt-color bgColor" >
+      <select id="list"  class="p-3 rounded border border-yellow-500 txt-color bgColor mb-10 mt-8" >
         <option >Sélectionner votre endroit</option>
         <option >London</option>
         <option>Paris</option>
@@ -36,14 +36,15 @@
       </select>
       <!--Météo-->
 
-      <div class="flex flex-col items-center mt-10 mb-20 txt-color">
+      <div id="infos" class="hidden flex-col items-center  mb-20 txt-color">
         <p id="lieu" class="text-4xl border-b-4 border-yellow-400 pb-1 mb-6">
           Lieu
         </p>
         <div class="flex flex-row">
+          <button class="text-4xl" onclick="prevSlide()"><</button>
           <!--Col 1-->
 
-          <div class="flex flex-col items-center mt-3">
+          <div class="flex flex-col items-center mt-3 slide">
             <!--1-->
             <p id="date0" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
             <p id="temp0" class="temp ">Météo</p>
@@ -59,7 +60,7 @@
           </div>
           <!--Col 2-->
 
-          <div class="flex flex-col mt-3 mx-4 items-center">
+          <div class="hidden flex-col mt-3 mx-4 items-center slide">
             <!--2-->
             <p id="date1" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
             <p id="temp1" class="temp ">Météo</p>
@@ -77,7 +78,7 @@
 
           <!--Col 3-->
 
-          <div class="flex flex-col mt-3 items-center">
+          <div class="hidden flex-col mt-3 items-center slide">
             <!--3-->
             <p id="date2" class="my-3 border-b-2 border-gray-300 pb-3 text-lg font-medium">13/11/2000</p>
             <p id="temp2" class="temp ">Météo</p>
@@ -92,23 +93,11 @@
             <img id="weather5" class="w-40" src="" />
             <p id="heure5" class=" ">Heure</p>
           </div>
+          <button class="text-4xl" onclick="nextSlide()">></button>
         </div>
       </div>
     </div>
-  <!--  <div class="flex flex-col items-center mt-32 mb-12 ">
-      <button
-        id="button"
-        class="p-3 hover:text-white hover:bg-gray-500 border-2 mb-8"
-      >
-        Show test
-      </button>
-      <div id="hide" class="">
-        <p class="test1 text-center text-2xl font-medium mt-12 ">TEST 1</p>
-        <p class="test2 text-center text-2xl font-medium ">TEST 2</p>
-        <p class="test3 text-center text-2xl font-medium ">TEST 3</p>
-      </div>
-    </div>-->
 
-    <script src="js/index.js"></script>
+    <script src="src/js/index.js"></script>
   </body>
 </html>
