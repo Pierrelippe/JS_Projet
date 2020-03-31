@@ -79,16 +79,8 @@ function listChoice() {
 function changeColorBackground(info) {
   var textcolor = document.getElementsByClassName("txt-color");
   var bgcolor = document.getElementsByClassName("bgColor");
-  //Couleur si c'est nuageux
-  if (parseInt(info.indexOf("nuageux")) >= 0) {
-    for (let i = 0; i < textcolor.length; i++) {
-      textcolor[i].style.color = "white";
-    }
-    for (let j = 0; j < bgcolor.length; j++) {
-      bgcolor[j].style.backgroundColor = "#A8A8A8";
-    }
-  }
 
+  
   //Couleur si c'est couvert
   if (parseInt(info.indexOf("couvert")) >= 0) {
     for (let i = 0; i < textcolor.length; i++) {
@@ -96,6 +88,15 @@ function changeColorBackground(info) {
     }
     for (let j = 0; j < bgcolor.length; j++) {
       bgcolor[j].style.backgroundColor = "#E7E7E7";
+    }
+  }
+  //Couleur si c'est nuageux
+  else if (parseInt(info.indexOf("nuageux")) >= 0) {
+    for (let i = 0; i < textcolor.length; i++) {
+      textcolor[i].style.color = "white";
+    }
+    for (let j = 0; j < bgcolor.length; j++) {
+      bgcolor[j].style.backgroundColor = "#A8A8A8";
     }
   }
   //Couleur si il y a de la pluie
