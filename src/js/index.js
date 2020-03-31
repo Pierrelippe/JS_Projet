@@ -2,13 +2,13 @@ var list = document.getElementById("list");
 var infos = document.getElementById("infos");
 const slide = document.getElementsByClassName("slide");
 
-var slideIndex=0;
+var slideIndex = 0;
 
 list.addEventListener("change", listChoice);
 
 function listChoice() {
-  if(infos.classList.contains("hidden")){
-    infos.classList.replace("hidden","flex")
+  if (infos.classList.contains("hidden")) {
+    infos.classList.replace("hidden", "flex");
   }
   if (parseInt(list.selectedIndex) > 0) {
     lieu = document.querySelector("#lieu");
@@ -79,10 +79,8 @@ function listChoice() {
 function changeColorBackground(info) {
   var textcolor = document.getElementsByClassName("txt-color");
   var bgcolor = document.getElementsByClassName("bgColor");
-  console.log("info :" + info);
   //Couleur si c'est nuageux
   if (parseInt(info.indexOf("nuageux")) >= 0) {
-    console.log("dark");
     for (let i = 0; i < textcolor.length; i++) {
       textcolor[i].style.color = "white";
     }
@@ -90,9 +88,18 @@ function changeColorBackground(info) {
       bgcolor[j].style.backgroundColor = "#A8A8A8";
     }
   }
+
+  //Couleur si c'est couvert
+  if (parseInt(info.indexOf("couvert")) >= 0) {
+    for (let i = 0; i < textcolor.length; i++) {
+      textcolor[i].style.color = "black";
+    }
+    for (let j = 0; j < bgcolor.length; j++) {
+      bgcolor[j].style.backgroundColor = "#E7E7E7";
+    }
+  }
   //Couleur si il y a de la pluie
   else if (parseInt(info.indexOf("pluie")) > 0) {
-    console.log("NewDark");
     for (let i = 0; i < textcolor.length; i++) {
       textcolor[i].style.color = "white";
     }
@@ -100,6 +107,7 @@ function changeColorBackground(info) {
       bgcolor[j].style.backgroundColor = "#686868";
     }
   }
+
   //Couleur pour le reste
   else {
     console.log("white");
@@ -131,7 +139,6 @@ function afficherMeteo(res, heureTemp, i, compt, lieu) {
 
 //Slide
 function nextSlide() {
-
   slideIndex++;
   setSlide(Math.abs(slideIndex));
 }
@@ -139,47 +146,48 @@ function nextSlide() {
 function prevSlide() {
   slideIndex--;
   setSlide(Math.abs(slideIndex));
-
 }
 
 function setSlide(index) {
-
   if (index % 3 === 0) {
     //On met les div a caché en hidden et celle qu'il faut voir en flex
     slide[0].classList.replace("hidden", "flex");
     if (slide[1].classList.contains("flex")) {
-      slide[1].classList.replace("flex","hidden");
+      slide[1].classList.replace("flex", "hidden");
     }
     if (slide[2].classList.contains("flex")) {
-      slide[2].classList.replace("flex","hidden");
+      slide[2].classList.replace("flex", "hidden");
     }
     //On change le fond d'écran en finction de la météo en fond
-    changeColorBackground(document.getElementById(`meteo${index%3}`).innerHTML);
+    changeColorBackground(
+      document.getElementById(`meteo${index % 3}`).innerHTML
+    );
   }
   if (index % 3 === 1) {
-
     if (slide[0].classList.contains("flex")) {
-    slide[0].classList.replace("flex","hidden");
+      slide[0].classList.replace("flex", "hidden");
     }
-    slide[1].classList.replace("hidden","flex");
+    slide[1].classList.replace("hidden", "flex");
 
     if (slide[2].classList.contains("flex")) {
-    slide[2].classList.replace("flex","hidden");
+      slide[2].classList.replace("flex", "hidden");
     }
 
-    changeColorBackground(document.getElementById(`meteo${index%3}`).innerHTML);
-
-
+    changeColorBackground(
+      document.getElementById(`meteo${index % 3}`).innerHTML
+    );
   }
   if (index % 3 === 2) {
     if (slide[0].classList.contains("flex")) {
-    slide[0].classList.replace("flex","hidden");}
+      slide[0].classList.replace("flex", "hidden");
+    }
 
     if (slide[1].classList.contains("flex")) {
-    slide[1].classList.replace("flex","hidden");
+      slide[1].classList.replace("flex", "hidden");
     }
-    slide[2].classList.replace("hidden","flex");
-    changeColorBackground(document.getElementById(`meteo${index%3}`).innerHTML);
-
+    slide[2].classList.replace("hidden", "flex");
+    changeColorBackground(
+      document.getElementById(`meteo${index % 3}`).innerHTML
+    );
   }
 }
